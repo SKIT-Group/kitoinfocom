@@ -56,7 +56,10 @@ $route['login']['post']='Auth/login';
 $route['logout']='Auth/logout';
 
 $route['dashboard']='admin/Dashboard';
+
 $route['product']='admin/Product';
+$route['product/add']['POST']='admin/Product/add';
+$route['product/update']['POST']='admin/Product/update';
 
 $route['default_controller'] = 'Home';
 $route['404_override'] = 'Errors/e_404';

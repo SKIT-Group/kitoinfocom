@@ -91,7 +91,7 @@
                                         <div class="onhover-div onhover-div-login">
                                             <ul class="user-box-name">
                                                 <li class="product-box-contain">
-                                                    <a href="{{ url('logout') }}">Log Out</a>
+                                                    <a href="<?php echo base_url('logout') ?>">Log Out</a>
                                                 </li>
                                             </ul>
                                         </div>
