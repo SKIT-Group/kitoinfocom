@@ -83,33 +83,16 @@
                             </div>
                         </div> -->
                         <div class="header-action-items header-action-items1">
-                            <div class="search-part">
-                                <div class="search-icon action-item icon"><i class="rt-search"></i></div>
-                                <div class="search-input-area">
-                                    <div class="container">
-                                        <div class="search-input-inner inner-2">
-                                            <div class="input-div">
-                                                <input class="search-input" type="text"
-                                                    placeholder="Search by keyword or #">
-                                            </div>
-                                            <div class="search-close-icon"><i class="rt-xmark"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="cart action-item">
                                 <div class="cart-nav">
                                     <div class="cart-icon icon"><i class="rt-cart"></i><span
                                             class="wishlist-dot icon-dot">3</span></div>
                                 </div>
                             </div>
-                            <div class="wishlist action-item">
-                                <div class="favourite-icon icon"><a href="wishlist.html"><i class="rt-heart"></i></a>
-                                </div>
-                            </div>
+
                             <a href="login.html" class="account"><i class="rt-user-2"></i></a>
                         </div>
-                        <div class="hamburger"><span></span></div>
                     </div>
                 </div>
             </div>
@@ -211,168 +194,7 @@
                 <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>
             </div>
         </div>
-        <!-- slide-bar start -->
-        <aside class="slide-bar">
-            <div class="offset-sidebar">
-                <a class="hamburger-1 mobile-hamburger-1 mobile-hamburger-2 ml--30" href="#"><span><i class="rt-xmark"></i></span></a>
-            </div>
-            <!-- offset-sidebar start -->
-            <div class="offset-sidebar-main">
-                <div class="offset-widget mb-40">
-                    <div class="info-widget">
-                        <img src="<?php echo base_url(); ?>assets/commerce/assets/images/logo1.svg" alt="">
-                        <p class="mb-30">
-                            We must explain to you how all seds this mistakens idea denouncing pleasures and praising account.
-                        </p>
-                    </div>
-                    <div class="info-widget info-widget2">
-                        <h4 class="offset-title mb-20">Get In Touch </h4>
-                        <ul>
-                            <li class="info phone"><a href="tel:78090790890208806803">780 907 908 90, 208 806 803</a></li>
-                            <li class="info email"><a href="email:info@webmail.com">info@webmail.com</a></li>
-                            <li class="info web"><a href="www.webexample.html">www.webexample.com</a></li>
-                            <li class="info location">13/A, New Pro State, NYC</li>
-                        </ul>
-                        <div class="offset-social-link">
-                            <h4 class="offset-title mb-20">Follow Us </h4>
-                            <ul class="social-icon">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		    <!-- offset-sidebar end -->
-            <!-- side-mobile-menu start -->
-            <nav class="side-mobile-menu side-mobile-menu1 side-mobile-menu2">
-                <ul id="mobile-menu-active">
-                    <li class="has-dropdown firstlvl">
-                        <a class="mm-link" href="index.html">Home <i class="rt-angle-down"></i></a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Main Home</a></li>
-                            <li><a href="index-two.html">Fashion Home</a></li>
-                            <li><a href="index-nine.html">Fashion Home Two</a></li>
-                            <li><a href="index-three.html">Furniture Home</a></li>
-                            <li><a href="index-four.html">Decor Home</a></li>
-                            <li><a href="index-five.html">Electronics Home</a></li>
-                            <li><a href="index-six.html">Grocery Home</a></li>
-                            <li><a href="index-seven.html">Footwear Home</a></li>
-                            <li><a href="index-eight.html">Gaming Home</a></li>
-                            <li><a href="index-ten.html">Sunglass Home</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown firstlvl">
-                        <a class="mm-link" href="shop.html">Shop <i class="rt-angle-down"></i></a>
-                        <ul class="sub-menu mega-dropdown-mobile">
-                            <li class="mega-dropdown-li">
-                                <ul class="mega-dropdown-ul mm-show">
-                                    <li class="dropdown-li"><a class="dropdown-link" href="shop.html">Shop</a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link" href="slidebar-left.html">Left Sidebar
-                                            Shop</a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link" href="slidebar-right.html">Right Sidebar
-                                            Shop</a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link" href="full-width-shop.html">Full
-                                            Width Shop</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="mega-dropdown-li">
-                                <ul class="mega-dropdown-ul mm-show">
-                                    <li class="dropdown-li"><a class="dropdown-link" href="product-details.html">Single Product
-                                            Layout
-                                            One</a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link"
-                                            href="product-details2.html">Single Product Layout
-                                            Two</a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link" href="variable-products.html">Variable Product</a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link" href="grouped-products.html">Grouped Product</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="mega-dropdown-li">
-                                <ul class="mega-dropdown-ul mm-show">
-                                    <li class="dropdown-li"><a class="dropdown-link" href="cart.html">Cart
-                                            </a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link"
-                                            href="checkout.html">Checkout</a>
-                                    </li>
-                                    <li class="dropdown-li"><a class="dropdown-link"
-                                            href="account.html">My
-                                            Account</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown firstlvl">
-                        <a class="mm-link" href="index.html">Pages <i class="rt-angle-down"></i></a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="faq.html">FAQ's</a></li>
-                            <li><a href="error.html">Error 404</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown firstlvl">
-                        <a class="mm-link" href="news.html">Blog <i class="rt-angle-down"></i></a>
-                        <ul class="sub-menu">
-                            <li><a href="news.html">Blog</a></li>
-                            <li><a href="news-grid.html">Blog Grid</a></li>
-                            <li><a href="news-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="mm-link" href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-action-items header-action-items1 header-action-items-side">
-                <div class="search-part">
-                    <div class="search-icon action-item icon"><i class="rt-search"></i></div>
-                    <div class="search-input-area">
-                        <div class="container">
-                            <div class="search-input-inner">
-                                <select id="custom-select">
-                                    <option value="hide">All Catagory</option>
-                                    <option value="all">All</option>
-                                    <option value="men">Men</option>
-                                    <option value="women">Women</option>
-                                    <option value="shoes">Shoes</option>
-                                    <option value="shoes">Glasses</option>
-                                    <option value="shoes">Bags</option>
-                                    <option value="shoes">Assesories</option>
-                                </select>
-                                <div class="input-div">
-                                    <div class="search-input-icon"><i class="rt-search mr--10"></i></div>
-                                    <input class="search-input" type="text" placeholder="Search by keyword or #">
-                                </div>
-                                <div class="search-close-icon"><i class="rt-xmark"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart action-item">
-                    <div class="cart-nav">
-                        <div class="cart-icon icon"><i class="rt-cart"></i><span class="wishlist-dot icon-dot">3</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="wishlist action-item">
-                    <div class="favourite-icon icon"><i class="rt-heart"></i><span class="cart-dot icon-dot">0</span>
-                    </div>
-                </div>
-                <a href="login.html" class="account"><i class="rt-user-2"></i></a>
-            </div>
-            <!-- side-mobile-menu end -->
-        </aside>
+
         <!--================= Banner Section Start Here =================-->
         <div class="banner banner-3 banner-5">
             <div class="swiper bannerSlidee">
@@ -406,7 +228,7 @@
                                         <h1 class="banner-heading mb--30">Elegance <br>
                                             Hand Craft</h1>
                                         <div class="banner-action">
-                                            <a class="banner-btn banner-btn2" href="#0"><i
+                                            <a class="banner-btn banner-btn2" href="javascript:void(0)"><i
                                                     class="rt-cart-shopping"></i>Shop
                                                 Now</a>
                                             <div class="banner-review">
@@ -429,11 +251,7 @@
                     </div>
                 </div>
             </div>
-            <div class="banner5 floating-elements">
-                <div class="floating-item item1"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/items/gros1.png" alt="floating-element"></div>
-                <div class="floating-item item2"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/items/gros2.png" alt="floating-element"></div>
-                <div class="floating-item item3"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/items/gros3.png" alt="floating-element"></div>
-            </div>
+            
         </div>
         <!--================= Banner Section End Here =================-->
     </header>
@@ -444,349 +262,39 @@
         <div class="container">
             <div class="section-header section-header4">
                 <span class="section-title section-title-2 mb--5
-                ">Featured Products</span>
-                <a href="shop-main.html" class="go-btn">All Products <i class="fal fa-long-arrow-right"></i></a>
+                ">Products</span>
             </div>
+
             <div class="row justify-content-center">
+
+                <?php foreach ($available_products as $key => $product) {?>
+
                 <div class="col-lg-15 col-md-4 col-sm-6">
                     <div class="product-item">
                         <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
                             <span class="stock">In Stock</span>
                         </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/1.png" alt="product-image"></a>
+
+                        <a href="javascript:void(0)" class="product-thumb"><img
+                                src="<?php echo base_url("uploads/products/".$product['img']); ?>" alt="product-image"></a>
                         <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Sweet Onion Salsa</a>
+                            <a href="javascript:void(0)" class="product-title"><?php echo $product['name']; ?></a>
                             <div class="product-bottom-content">
-                                <span class="product-price">₹230,00</span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
+                                <span class="product-price">₹<?php echo $product['price'] ?></span>
                             </div>
                             <div class="product-features product-features2">
                                 <div class="hot-tag product-tag">HOT</div>
                             </div>
                         </div>
                         <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
+                            <button  class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
+                                Cart</butotn>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/2.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Chocolate Chips</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00 <span class="old-price">₹460,00</span></span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-features product-features3">
-                                <div class="new-tag product-tag">NEW</div>
-                                <div class="discount-tag product-tag">-35%</div>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/3.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Meatless Chicken Tender</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00</span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/4.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Cherry Spoiling Water</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00 <span class="old-price">₹460,00</span></span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-features product-features3">
-                                <div class="new-tag product-tag">NEW</div>
-                                <div class="discount-tag product-tag">-35%</div>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/5.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Mixed Vegetables</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00</span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/6.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Jerry Jam Bites</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00 <span class="old-price">₹460,00</span></span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-features product-features3">
-                                <div class="new-tag product-tag">NEW</div>
-                                <div class="discount-tag product-tag">-35%</div>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/7.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Organic Broccoli Cuts</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00</span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/8.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Mango Chunks</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00</span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/9.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Turkey Burgers</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00 <span class="old-price">₹460,00</span></span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-features product-features3">
-                                <div class="hot-tag product-tag">HOT</div>
-                                <div class="discount-tag product-tag">-35%</div>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-15 col-md-4 col-sm-6">
-                    <div class="product-item">
-                        <div class="product-status-bar">
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fal fa-star"></i></div>
-                            </div>
-                            <span class="stock">In Stock</span>
-                        </div>
-                        <a href="product-details.html" class="product-thumb"><img
-                                src="<?php echo base_url(); ?>assets/commerce/assets/images/products/home5/10.png" alt="product-image"></a>
-                        <div class="contents">
-                            <span class="product-type">Cookie</span>
-                            <a href="product-details.html" class="product-title">Rising Cust Pizza</a>
-                            <div class="product-bottom-content">
-                                <span class="product-price">₹230,00</span>
-                                <button class="wishlist"><i class="rt-heart"></i></button>
-                            </div>
-                            <div class="product-actions product-actions3">
-                                <a href="wishlist.html" class="product-action"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-bottom-action">
-                            <a href="cart.html" class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
-                                Cart</a>
-                            <button class="view-btn"><i class="fal fa-eye"></i></button>
-                        </div>
-                    </div>
-                </div>
+
+                <?php } ?>
+
             </div>
         </div>
     </div>
@@ -847,8 +355,7 @@
                                     <div class="icon"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/icons/24clock3.png" alt="chat-icon">
                                     </div>
                                     <div class="contact-info">
-                                        <a href="tel:0020500" class="service-time info">0020 500 - CALL -
-                                            000</a>
+                                        <a href="javascript:void(0)" class="service-time info"><?php echo $this->config->item('company_mobile') ?></a>
                                         <span class="title">Mon - Fri: 9:00-20:00</span>
                                     </div>
                                 </div>
@@ -856,23 +363,23 @@
                                     <div class="icon"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/icons/mail3.png" alt="phone-icon">
                                     </div>
                                     <div class="contact-info">
-                                        <a href="mailto:info@webmail.com"
-                                            class="email-address info">info@webmail.com</a>
+                                        <a href="mailto:<?php echo $this->config->item('company_email'); ?>"
+                                            class="email-address info"><?php echo $this->config->item('company_email'); ?></a>
                                         <span class="title">Get Support</span>
                                     </div>
                                 </div>
                             </div>
                             <ul class="social-links-footer2 social-links-footer3">
-                                <li><a class="platform fb" target="_blank" href="http://facebook.com/"><i
+                                <li><a class="platform fb"  href="javascript:void(0)"><i
                                             class="fab fa-facebook"></i></a>
                                 </li>
-                                <li><a class="platform yt" target="_blank" href="http://youtube.com/"><i
+                                <li><a class="platform yt"  href="javascript:void(0)"><i
                                             class="fab fa-youtube"></i></a>
                                 </li>
-                                <li><a class="platform ttr" target="_blank" href="http://twitter.com/"><i
+                                <li><a class="platform ttr"  href="javascript:void(0)"><i
                                             class="fab fa-twitter"></i></a>
                                 </li>
-                                <li><a class="platform lkd" target="_blank" href="http://linkedin.com/"><i
+                                <li><a class="platform lkd"  href="javascript:void(0)"><i
                                             class="fab fa-linkedin"></i></a>
                                 </li>
                             </ul>
@@ -885,29 +392,29 @@
                                 of dimensional view and decoration co
                                 Great for adding a decorative touch to
                                 any room’s decor.</p>
-                            <a href="#0" class="getin-touch">Get In Touch <i class="fal fa-long-arrow-right"></i></a>
+                            <a href="javascript:void(0)" class="getin-touch">Get In Touch <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-13 col-md-6 col-sm-6">
                         <div class="footer-widget">
                             <h3 class="footer-widget-title title-2">Information</h3>
                             <ul class="widget-items cata-widget">
-                                <li class="widget-list-item"><a href="#0">Custom Service</a></li>
-                                <li class="widget-list-item"><a href="#0">FAQs</a></li>
-                                <li class="widget-list-item"><a href="#0">Ordering Tracking</a></li>
-                                <li class="widget-list-item"><a href="#0">Contacts</a></li>
-                                <li class="widget-list-item"><a href="#0">Events</a></li>
+                                <li class="widget-list-item"><a href="javascript:void(0)">Custom Service</a></li>
+                                <li class="widget-list-item"><a href="javascript:void(0)">FAQs</a></li>
+                                <li class="widget-list-item"><a href="javascript:void(0)">Ordering Tracking</a></li>
+                                <li class="widget-list-item"><a href="javascript:void(0)">Contacts</a></li>
+                                <li class="widget-list-item"><a href="javascript:void(0)">Events</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-13 col-md-6 col-sm-6">
                         <h3 class="footer-widget-title title-2">My Account</h3>
                         <ul class="footer-widget">
-                            <li class="widget-list-item"><a href="#0">Delivery Infomation</a></li>
-                            <li class="widget-list-item"><a href="#0">Privacy Policy</a></li>
-                            <li class="widget-list-item"><a href="#0">Discount</a></li>
-                            <li class="widget-list-item"><a href="#0">Custom Service</a></li>
-                            <li class="widget-list-item"><a href="#0">Terms & Condition</a></li>
+                            <li class="widget-list-item"><a href="javascript:void(0)">Delivery Infomation</a></li>
+                            <li class="widget-list-item"><a href="javascript:void(0)">Privacy Policy</a></li>
+                            <li class="widget-list-item"><a href="javascript:void(0)">Discount</a></li>
+                            <li class="widget-list-item"><a href="javascript:void(0)">Custom Service</a></li>
+                            <li class="widget-list-item"><a href="javascript:void(0)">Terms & Condition</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-25 col-md-6 col-sm-6">
@@ -917,16 +424,16 @@
                             <div class="input-div">
                                 <input type="email" placeholder="Enter email address">
                             </div>
-                            <a href="#0" class="subscribe-btn">Subscribe Now <i class="fal fa-long-arrow-right"></i></a>
+                            <a href="javascript:void(0)" class="subscribe-btn">Subscribe Now <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottombar">
                     <div class="app-download">
                         <span class="download-text">Order faster with our App!</span>
-                        <a href="http://appstore.com/" target="_blank" class="download-store"><img
+                        <a href="javascript:void(0)"  class="download-store"><img
                                 src="<?php echo base_url(); ?>assets/commerce/assets/images/items/appstore.jpg" alt=""></a>
-                        <a href="https://play.google.com/store/apps" target="_blank" class="download-store"><img
+                        <a href="javascript:void(0)"  class="download-store"><img
                                 src="<?php echo base_url(); ?>assets/commerce/assets/images/items/playstore.jpg" alt=""></a>
                     </div>
                     <div class="payment-methods"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/footer/payment2.svg" alt="payment-methods">
@@ -937,15 +444,15 @@
         <div class="footer-bottom-area">
             <div class="container">
                 <div class="footer-bottom-inner">
-                    <span class="copyright">Copyright & Design By <a href="http://reacthemes.com/" class="brand"
-                            target="_blank">Reacthemes</a> -2022</span>
+                    <span class="copyright">Copyright & Design By <a href="javascript:void(0)" class="brand"
+                            >Vikram Singh</a> -2025</span>
                 </div>
             </div>
         </div>
     </div>
     <!--================= Footer End Here =================-->
 
-
+    <?php if(!$auth_user) { ?>
     <!--================= Newsletter Popup Start Here =================-->
     <div class="rts-newsletter-popup">
         <div class="newsletter-close-btn"><i class="fal fa-times"></i></div>
@@ -968,98 +475,7 @@
         </div>
     </div>
     <!--================= Newsletter Popup End Here =================-->
-
-
-    <!--================= Product-details Section Start Here =================-->
-    <!-- <div class="product-details-popup-wrapper">
-        <div class="rts-product-details-section rts-product-details-section2 product-details-popup-section">
-            <div class="product-details-popup">
-                <button class="product-details-close-btn"><i class="fal fa-times"></i></button>
-                <div class="details-product-area">
-                    <div class="product-thumb-area">
-                        <div class="cursor"></div>
-                        <div class="thumb-wrapper one filterd-items figure">
-                            <div class="product-thumb zoom" onmousemove="zoom(event)"
-                                style="background-image: url(<?php echo base_url(); ?>assets/commerce/assets/images/products/product-details.jpg)"><img
-                                    src="<?php echo base_url(); ?>assets/commerce/assets/images/products/product-details.jpg" alt="product-thumb">
-                            </div>
-                        </div>
-                        <div class="thumb-wrapper two filterd-items hide">
-                            <div class="product-thumb zoom" onmousemove="zoom(event)"
-                                style="background-image: url(<?php echo base_url(); ?>assets/commerce/assets/images/products/product-filt2.jpg)"><img
-                                    src="<?php echo base_url(); ?>assets/commerce/assets/images/products/product-filt2.jpg" alt="product-thumb">
-                            </div>
-                        </div>
-                        <div class="thumb-wrapper three filterd-items hide">
-                            <div class="product-thumb zoom" onmousemove="zoom(event)"
-                                style="background-image: url(<?php echo base_url(); ?>assets/commerce/assets/images/products/product-filt3.jpg)"><img
-                                    src="<?php echo base_url(); ?>assets/commerce/assets/images/products/product-filt3.jpg" alt="product-thumb">
-                            </div>
-                        </div>
-                        <div class="product-thumb-filter-group">
-                            <div class="thumb-filter filter-btn active" data-show=".one"><img
-                                    src="<?php echo base_url(); ?>assets/commerce/assets/images/products/product-filt1.jpg" alt="product-thumb-filter"></div>
-                            <div class="thumb-filter filter-btn" data-show=".two"><img
-                                    src="<?php echo base_url(); ?>assets/commerce/assets/images/products/product-filt2.jpg" alt="product-thumb-filter"></div>
-                            <div class="thumb-filter filter-btn" data-show=".three"><img
-                                    src="<?php echo base_url(); ?>assets/commerce/assets/images/products/product-filt3.jpg" alt="product-thumb-filter"></div>
-                        </div>
-                    </div>
-                    <div class="contents">
-                        <div class="product-status">
-                            <span class="product-catagory">Dress</span>
-                            <div class="rating-stars-group">
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star"></i></div>
-                                <div class="rating-star"><i class="fas fa-star-half-alt"></i></div>
-                                <span>10 Reviews</span>
-                            </div>
-                        </div>
-                        <h2 class="product-title">Wide Cotton Tunic Dress <span class="stock">In Stock</span></h2>
-                        <span class="product-price"><span class="old-price">₹9.35</span> ₹7.25</span>
-                        <p>
-                            Priyoshop has brought to you the Hijab 3 Pieces Combo Pack PS23. It is a
-                            completely modern design and you feel comfortable to put on this hijab.
-                            Buy it at the best price.
-                        </p>
-                        <div class="product-bottom-action">
-                            <div class="cart-edit">
-                                <div class="quantity-edit action-item">
-                                    <button class="button minus"><i class="fal fa-minus minus"></i></button>
-                                    <input type="text" class="input" value="01" />
-                                    <button class="button plus">+<i class="fal fa-plus plus"></i></button>
-                                </div>
-                            </div>
-                            <a href="cart.html" class="addto-cart-btn action-item"><i class="rt-basket-shopping"></i>
-                                Add To
-                                Cart</a>
-                            <a href="wishlist.html" class="wishlist-btn action-item"><i class="rt-heart"></i></a>
-                        </div>
-                        <div class="product-uniques">
-                            <span class="sku product-unipue"><span>SKU: </span> BO1D0MX8SJ</span>
-                            <span class="catagorys product-unipue"><span>Categories: </span> T-Shirts, Tops, Mens</span>
-                            <span class="tags product-unipue"><span>Tags: </span> fashion, t-shirts, Men</span>
-                        </div>
-                        <div class="share-social">
-                            <span>Share:</span>
-                            <a class="platform" href="http://facebook.com/" target="_blank"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="platform" href="http://twitter.com/" target="_blank"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="platform" href="http://behance.com/" target="_blank"><i
-                                    class="fab fa-behance"></i></a>
-                            <a class="platform" href="http://youtube.com/" target="_blank"><i
-                                    class="fab fa-youtube"></i></a>
-                            <a class="platform" href="http://linkedin.com/" target="_blank"><i
-                                    class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!--================= Product-details Section End Here =================-->
-
+    <?php } ?>
 
     <!--================= Scroll to Top Start =================-->
     <div class="scroll-top-btn scroll-top-btn1 scroll-top-btn2"><i class="fas fa-angle-up arrow-up"></i><i
@@ -1082,8 +498,10 @@
     <script src="<?php echo base_url(); ?>assets/commerce/assets/js/vendors/rtsmenu.js"></script>
     <!--================= Magnefic Popup Plugin =================-->
     <script src="<?php echo base_url(); ?>assets/commerce/assets/js/vendors/isotope.pkgd.min.js"></script>
+
     <!--================= Magnefic Popup Plugin =================-->
     <script src="<?php echo base_url(); ?>assets/commerce/assets/js/vendors/jquery.magnific-popup.min.js"></script>
+    
     <!--================= Main Script =================-->
     <script src="<?php echo base_url(); ?>assets/commerce/assets/js/main.js"></script>
 </body>

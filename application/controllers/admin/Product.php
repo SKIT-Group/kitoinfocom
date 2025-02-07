@@ -25,7 +25,7 @@ class Product extends Admin_Controller {
         $response['status']=false;
         $request_data = $this->input->post();
 
-        $config['upload_path']   = './uploads/';
+        $config['upload_path']   = './uploads/products/';
         $config['allowed_types'] = 'jpg|jpeg|png';
         $config['max_size']      = 2048; // Max file size in KB (2MB)
         $config['file_name']     = time(); 
@@ -60,6 +60,7 @@ class Product extends Admin_Controller {
             'price'=>$request_data['price'],
             'stock'=>$request_data['stock'],
             'img'=>$this->upload->data()['file_name'],
+            'status'=>'enable',
         );
 
         if(!$this->product_model->add($insert_data)){
@@ -106,7 +107,7 @@ class Product extends Admin_Controller {
         }
         
         if(isset($_FILES['image'])){
-            $config['upload_path']   = './uploads/';
+            $config['upload_path']   = './uploads/products/';
             $config['allowed_types'] = 'jpg|jpeg|png';
             $config['max_size']      = 2048; // Max file size in KB (2MB)
             $config['file_name']     = $product['img'];

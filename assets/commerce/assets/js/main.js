@@ -1417,7 +1417,11 @@
       $(".anywere-home").addClass("bgshow");
       $(".rts-newsletter-popup").addClass("popup");
     }
-    setTimeout(showpanel, 4000)
+
+    //show only when element is available in dom
+    if ($(".rts-newsletter-popup").length) {
+      setTimeout(showpanel, 4000)
+    }
   });
 
   $(".anywere-home").on('click', function () {

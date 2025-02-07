@@ -29,4 +29,8 @@ class Product_model extends CI_Model {
         return $this->db->where('status','enable')->get($this->table)->result_array();
     }
 
+    public function shop_products(){
+        return $this->db->where('status','enable')->where('stock >',0)->get($this->table)->result_array();
+    }
+
 }

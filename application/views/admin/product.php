@@ -104,7 +104,7 @@
                                             <td><?php echo $product['price'] ?></td>
                                             <td><?php echo $product['stock'] ?></td>
                                             <td>
-                                                <img style="width:100px" src="<?php echo base_url('uploads/'.$product['img']) ?>" alt="product image">
+                                                <img style="width:100px" src="<?php echo base_url('uploads/products/'.$product['img']).'?t='.time() ?>" alt="product image">
                                             </td>
                                             <td><?php echo $product['created_at'] ?></td>
                                             <td>

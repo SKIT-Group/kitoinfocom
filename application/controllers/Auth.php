@@ -48,7 +48,7 @@ class Auth extends CI_Controller {
         }
 
         $this->session->set_userdata('auth_user',$user['id']);
-
+        
         $response['status']=true;
         return  $this->output
         ->set_content_type('application/json')
