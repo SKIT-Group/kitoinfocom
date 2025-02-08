@@ -70,6 +70,11 @@ $route['cart/remove/(:num)']="Cart/remove/$1";
 $route['checkout']="Checkout";
 $route['checkout/pay']['POST']="Checkout/pay";
 
+$route['orders']="Order";
+$route['order/payment/re_verify/(:num)']="Order/payment_verify/$1";
+
+$route['paypal/return']="Checkout/paypal_return";
+
 $route['default_controller'] = 'Home';
 $route['404_override'] = 'Errors/e_404';
 $route['translate_uri_dashes'] = TRUE;

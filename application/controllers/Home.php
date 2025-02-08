@@ -40,10 +40,6 @@ class Home extends Public_Controller {
 		return $my_cart;
 	}
 
-	public function test(){
-		echo "<pre>";
-		print_r($_SESSION);
-		die;
-	}
+	
 
 }

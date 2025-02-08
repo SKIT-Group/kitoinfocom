@@ -8,19 +8,17 @@ class Order_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('product_model');
     }
 
     public function add(array $order,$products){
+        $this->db->trans_start();  // Start transaction
+
         $order['address']=json_encode($order['address']);
         $this->db->insert($this->order_table,$order);
 
         $order_id = $this->db->insert_id();
 
-        if(!$order_id){
-            return false;
-        }
-
-        $total_amount=0;
         $product_details=[];
         foreach ($products as $key => $value) {
             $product_details[]=array(
@@ -29,16 +27,35 @@ class Order_model extends CI_Model {
                 'qty'=>$value['qty'],
                 'amount'=>$value['qty']*$value['product_price']
             );
-            $total_amount+=$value['qty']*$value['product_price'];
+
+            $this->product_model->update_qty($value['product'],-$value['qty']);
+
         }
 
         $this->db->insert_batch($this->order_details_table, $product_details);
-        if(!$this->db->affected_rows()){
+
+        $this->db->trans_complete();  
+
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
             return false;
+        } else {
+            $this->db->trans_commit();
+            return true;
         }
 
-        return $this->db->where('id',$order_id)->update($this->order_table,['total_amount'=>$total_amount]);
+    }
 
+    public function my_orders(int $user){
+        return $this->db->where('user',$user)->get($this->order_table)->result_array();
+    }
+
+    public function update_payment($payment,$status){
+        return $this->db->where('payment_id',$payment)->update($this->order_table,['payment_status'=>$status]);
+    }
+
+    public function order(int $order){
+        return $this->db->where('id',$order)->get($this->order_table)->row_array();
     }
 
 }

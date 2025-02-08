@@ -51,6 +51,22 @@ class Cart_model extends CI_Model {
         
         return $this->db->get()->result_array();
     }
-    
+
+    public function checkout_product_total(int $user) {
+        $this->db->select('SUM(CASE 
+        WHEN c.qty > p.stock THEN p.stock * p.price 
+        ELSE c.qty * p.price 
+            END) AS total_amount', false);
+        $this->db->from('carts as c');
+        $this->db->join('products as p', 'c.product = p.id AND p.stock > 0', 'inner');
+        $this->db->where('c.user', $user);
+        $this->db->where('c.qty >', 0);
+
+        return $this->db->get()->row_array()['total_amount'];
+    }
+
+    public function delete_my_cart(int $user){
+        return $this->db->where('user',$user)->delete($this->table);
+    }
 
 }

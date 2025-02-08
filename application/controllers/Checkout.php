@@ -9,6 +9,7 @@ class Checkout extends Authenticate_Controller {
         $this->load->model('cart_model');
         $this->load->model('order_model');
         $this->load->helper('captcha');
+        $this->load->library('paypal');
     }
 
     public function index(){
@@ -50,6 +51,15 @@ class Checkout extends Authenticate_Controller {
     public function pay(){
         $response['status']=false;
         $request_data = $this->input->post();
+
+        if(!$this->config->item('paypal_client_id') || !$this->config->item('paypal_client_secret'))
+        {
+            $response['errors']=['error'=>"technical error try sometime latter!"];
+
+            return $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+        }
 
         $this->form_validation->validation_data=$request_data;
 
@@ -97,6 +107,19 @@ class Checkout extends Authenticate_Controller {
             ->set_output(json_encode($response));
         }
 
+        $cart_product_total = $this->cart_model->checkout_product_total($this->auth_user['id']);
+
+        $payment =  $this->paypal->create_order($cart_product_total);
+
+        if(!$payment['status'])
+        {
+            $response['errors']=['error'=>'Technical error try sometime latter'];
+
+            return $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+        }
+
         $order = array(
             'user'=>$this->auth_user['id'],
             'address'=>array(
@@ -111,6 +134,9 @@ class Checkout extends Authenticate_Controller {
                 'order_note'=>$request_data['order_note'],
             ),
             'payment_method'=>'paypal',
+            'payment_id'=>$payment['id'],
+            'payment_url'=>$payment['payment_url'],
+            'total_amount'=>$cart_product_total,
         );
 
         if(!$this->order_model->add($order,$cart_products)){
@@ -120,13 +146,27 @@ class Checkout extends Authenticate_Controller {
             ->set_content_type('application/json')
             ->set_output(json_encode($response));
         }
-        
+
+        $this->cart_model->delete_my_cart($this->auth_user['id']);
+
         $this->session->unset_userdata('captcha');
         $response['status']=true;
+        $response['payment_url']=$order['payment_url'];
         return  $this->output
         ->set_content_type('application/json')
         ->set_output(json_encode($response));
 
+    }
+
+    public function paypal_return(){
+        $request_data = $this->input->get();
+        $result = $this->paypal->capture_order($request_data['token']);
+
+        if($result['status']){
+            $this->order_model->update_payment($request_data['token'],'complete');
+        }
+
+        return redirect(base_url('orders'));
     }
 
 }

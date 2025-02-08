@@ -27,12 +27,17 @@
                                 </div>
                             </div>
                             <?php if(!$auth_user){?> 
-                            <a href="<?php echo base_url('login') ?>" class="account">Login</a>
+                            <a  href="<?php echo base_url('login') ?>" class="account">Login</a>
+                            <?php } ?>
+                            
+                            <?php if($auth_user){?> 
+                            <a style="margin-right:15px" href="<?php echo base_url('orders') ?>" class="account">My Orders</a>
                             <?php } ?>
 
                             <?php if($auth_user){?> 
                             <a href="<?php echo base_url('logout') ?>" class="account">Logout</a>
                             <?php } ?>
+
                         </div>
                     </div>
                 </div>
@@ -69,7 +74,7 @@
                             </div> -->
                             <div class="item-wrapper">
                                 <span class="product-qnty"><?php echo $qty; ?> ×</span>
-                                <span class="product-price">₹<?php echo $cart_product['product_price'] ?></span>
+                                <span class="product-price">$<?php echo $cart_product['product_price'] ?></span>
                             </div>
                         </div>
                     </div>
@@ -101,9 +106,9 @@
 
             </div>
             <div class="cart-bottom-area">
-                <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">₹199.00</span> MORE
+                <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
                     FOR FREE SHIPPING</span>
-                <span class="total-price">TOTAL: <span class="price">₹<?php echo $total_cart_value; ?></span></span>
+                <span class="total-price">TOTAL: <span class="price">$<?php echo $total_cart_value; ?></span></span>
                 <button id="checkout-btn" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</button>
             </div>
         </div>
@@ -123,7 +128,7 @@
                                             In Our Store</h1>
                                         <div class="banner-action">
                                             <p>From</p>
-                                            <span class="product-price">₹29.00</span>
+                                            <span class="product-price">$29.00</span>
                                         </div>
                                     </div>
                                     <div class="banner-product-thumb"><img
@@ -193,7 +198,7 @@
                         <div class="contents">
                             <a href="javascript:void(0)" class="product-title"><?php echo $product['name']; ?></a>
                             <div class="product-bottom-content">
-                                <span class="product-price">₹<?php echo $product['price'] ?></span>
+                                <span class="product-price">$<?php echo $product['price'] ?></span>
                             </div>
                             <div class="product-features product-features2">
                                 <div class="hot-tag product-tag">HOT</div>

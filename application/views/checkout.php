@@ -121,7 +121,7 @@
                                     <div class="category-title-area">
                                         <span class="category-title"><?php echo $value['product_name'] ?> × <?php echo $value['qty'] ?></span>
                                     </div>
-                                    <div class="price">₹<?php echo $value['qty']*$value['product_price']; ?></div>
+                                    <div class="price">$<?php echo $value['qty']*$value['product_price']; ?></div>
                                 </div>
                             </div>
 
@@ -129,7 +129,7 @@
                         
                         <div class="action-bottom">
                             <span class="total">Total</span>
-                            <span class="total-price">₹<?php echo $total_amount; ?></span>
+                            <span class="total-price">$<?php echo $total_amount; ?></span>
                         </div>
                     </div>
 
@@ -199,6 +199,10 @@
             
             // Make the fetch request
 
+            const btn = document.getElementById('pay-now-btn');
+            btn.disabled=true;
+            btn.style.background="#EE403D";
+
             fetch(`${$base_url}checkout/pay`, options)
             .then(response => {
                 if (!response.ok) {
@@ -208,12 +212,14 @@
             })
             .then(data => {
                 if(data['status']){
-                    toastr.success(`Pay the amount`);
+                    location.href=data['payment_url'];
                 }else{
                     if(data['errors']){
                         Object.keys(data['errors']).forEach(element => {
                             toastr.warning(data['errors'][element]);
                         });
+                        btn.disabled=false;
+                        btn.style.background="#EE403D";
                     }else{
                         throw new Error('frontend validation not work');
                     }
@@ -222,7 +228,7 @@
             .catch(error => {
                 // Handle errors
                 toastr.error("Something Went Wrong! Plz try sometime latter.");
-                // setTimeout(()=>{location.reload()},1000);
+                setTimeout(()=>{location.reload()},1000);
             });
 
 

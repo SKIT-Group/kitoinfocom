@@ -33,4 +33,10 @@ class Product_model extends CI_Model {
         return $this->db->where('status','enable')->where('stock >',0)->get($this->table)->result_array();
     }
 
+    public function update_qty(int $product,int $qty){
+        $this->db->set('stock', 'stock + '.$qty, FALSE); // FALSE ensures raw SQL execution
+        $this->db->where('id',$product); // Ensures the condition stays valid
+        return $this->db->update($this->table);
+    }
+
 }

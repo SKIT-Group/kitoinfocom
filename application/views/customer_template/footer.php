@@ -7,7 +7,7 @@
                             <div class="icon"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/icons/footerft1.png" alt="icon"></div>
                             <div class="content">
                                 <h3 class="title">Free shipping</h3>
-                                <p>Free shipping on orders over ₹65.</p>
+                                <p>Free shipping on orders over $65.</p>
                             </div>
                         </div>
                     </div>
