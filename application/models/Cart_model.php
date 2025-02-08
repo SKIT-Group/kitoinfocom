@@ -24,4 +24,20 @@ class Cart_model extends CI_Model {
 
     }
 
+    public function remove_product($user,$product){
+        return $this->db->where('user',$user)->where('product',$product)->delete($this->table);
+    }
+
+    public function my_cart(int $user){
+        $this->db->select('c.*, p.stock as product_stock, p.img as product_img, p.name as product_name, p.price as product_price')->from($this->table." as c");
+        $this->db->join('products as p',"c.product=p.id");
+        $this->db->where('c.user',$user);
+        return $this->db->get()->result_array();
+    }
+
+    public function insert_batch(array $batch){
+        $this->db->insert_batch($this->table, $batch);
+        return $this->db->affected_rows();
+    }
+
 }

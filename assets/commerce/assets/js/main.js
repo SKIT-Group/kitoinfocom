@@ -1211,6 +1211,7 @@
       }
       $parent.find('a.add-to-cart').attr('data-quantity', newVal);
       $parent.find('.input').val(newVal);
+      $parent.find('.input')[0].dispatchEvent(new Event("change"));
     });
   });
   var countdown = $('.countdown');
@@ -1420,7 +1421,7 @@
 
     //show only when element is available in dom
     if ($(".rts-newsletter-popup").length) {
-      setTimeout(showpanel, 4000)
+      setTimeout(showpanel, 1000)
     }
   });
 

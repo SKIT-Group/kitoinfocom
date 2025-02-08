@@ -111,8 +111,8 @@
 
                         <div class="sign-up-box">
                             <h4>Create New account?</h4>
-                            <a  tabindex="-1" href="{{ url('register') }}">Sign Up</a>
-                            <a  tabindex="-1" href="{{ url('forgot_password') }}">Forgot Password ?</a>
+                            <a  tabindex="-1" href="<?php echo base_url('/'); ?>">Sign Up</a>
+                            <a  tabindex="-1" href="<?php echo base_url('/'); ?>">Go To Shop</a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,11 @@
             .then(data => {
                 if(data['status']){
                     toastr.success('Login Successfully');
-                    setTimeout(()=>{location.href=`${$base_url}dashboard`},1000);
+                    if(data['user']=='admin'){
+                        setTimeout(()=>{location.href=`${$base_url}dashboard`},1000);
+                    }else{
+                        setTimeout(()=>{location.href=`${$base_url}`},1000);
+                    }
                 }else{
                     if(data['errors']){
                         Object.keys(data['errors']).forEach(element => {

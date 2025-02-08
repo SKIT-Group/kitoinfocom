@@ -67,11 +67,87 @@ class Cart extends Public_Controller {
 	}
 
     public function update(int $id,int $qty){
+        $response['status']=false;
         
+        $product = $this->product_model->product($id);
+
+        if(!$product){
+            $response['errors']=['error'=>'choose the right product'];
+
+            return $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+        }
+
+        if($qty<1){
+            $response['errors']=['error'=>'quantity cant be zero'];
+
+            return $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+        }
+
+        if($qty>$product['stock']){
+            $response['errors']=['error'=>"Stock Not Available"];
+                    
+            return $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+        }
+
+        $cart_product = array(
+            'user'=>$this->auth_user ? $this->auth_user['id'] : NULL,
+            'product'=>$product['id'],
+            'qty'=>$qty
+        );
+
+        $result = false;
+        if($this->auth_user){
+            $result = $this->cart_model->update_cart($cart_product);
+        }else{
+            $result = $this->update_cart($cart_product);
+        }
+
+        if(!$result){
+            $response['errors']=['error'=>"Technical error ! Try some time latter"];
+                    
+            return $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+        }
+
+        $response['status']=true;
+        return $this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($response));
     }
 
-    public function remove(int $id){
+    public function remove(int $product_id){
+        $response['status']=false;
 
+        $result = false;
+        if($this->auth_user){
+
+            $result = $this->cart_model->remove_product($this->auth_user,$product_id);
+
+        }else{
+
+            $result = $this->remove_cart_product($product_id);
+
+        }
+
+        if(!$result){
+            $response['errors']=['error'=>"Technical error Try sometime latter!"];
+
+            return $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));    
+        }
+
+        $response['status']=true;
+        return $this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($response));
     }
 
     protected function product_in_cart(int $product){
@@ -100,6 +176,22 @@ class Cart extends Public_Controller {
 
         $cart[]=$cart_product;
         $this->session->set_userdata('cart',$cart);
+        return true;
+    }
+
+    protected function remove_cart_product(int $product){
+        $cart = $this->session->userdata('cart') ?? [];
+
+        foreach ($cart as $key => $value) {
+            if($value['product']==$product){
+
+                array_splice($cart, $key, 1);
+
+                $this->session->set_userdata('cart',$cart);
+                return true;
+            }
+        }
+
         return true;
     }
 

@@ -32,6 +32,16 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/commerce/assets/css/variables/variable5.css">
     <!--================= Main Stylesheet =================-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/commerce/assets/css/main.css">
+
+    <!-- toastre -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
+    <style>
+        #toast-container {
+        z-index: 10000000000000000000; /* Set a high value to ensure it appears above other elements */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -87,11 +97,16 @@
                             <div class="cart action-item">
                                 <div class="cart-nav">
                                     <div class="cart-icon icon"><i class="rt-cart"></i><span
-                                            class="wishlist-dot icon-dot">3</span></div>
+                                            class="wishlist-dot icon-dot"><?php echo $cart_product_qty ?></span></div>
                                 </div>
                             </div>
+                            <?php if(!$auth_user){?> 
+                            <a href="<?php echo base_url('login') ?>" class="account">Login</a>
+                            <?php } ?>
 
-                            <a href="login.html" class="account"><i class="rt-user-2"></i></a>
+                            <?php if($auth_user){?> 
+                            <a href="<?php echo base_url('logout') ?>" class="account">Logout</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -100,98 +115,50 @@
 
         <div class="cart-bar">
             <div class="cart-header">
-                <h3 class="cart-heading">MY CART (3 ITEMS)</h3>
+                <h3 class="cart-heading">MY CART (<?php echo $cart_product_qty ?> ITEMS)</h3>
                 <div class="close-cart"><i class="fal fa-times"></i></div>
             </div>
             <div class="product-area">
+            <!-- (last-child) you can also use this class for last product-item -->
+
+            <?php $total_cart_value=0 ?>
+            <?php foreach ($cart_products as $key => $cart_product) { ?>
+                <?php $total_cart_value += $cart_product['qty']*$cart_product['product_price']; ?>
                 <div class="product-item">
                     <div class="product-detail">
-                        <div class="product-thumb"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/slider/image1.jpg" alt="product-thumb"></div>
+                        <div class="product-thumb"><img src="<?php echo base_url('uploads/products/'.$cart_product['product_img']); ?>" alt="product-thumb"></div>
                         <div class="item-wrapper">
-                            <span class="product-name">Parachute Jacket</span>
-                            <div class="item-wrapper">
+                            <span class="product-name"><?php echo $cart_product['product_name'] ?></span>
+                            <!-- <div class="item-wrapper">
                                 <span class="product-variation"><span class="color">Green /</span>
                                     <span class="size">XL</span></span>
-                            </div>
+                            </div> -->
                             <div class="item-wrapper">
-                                <span class="product-qnty">3 ×</span>
-                                <span class="product-price">₹198.00</span>
+                                <span class="product-qnty"><?php echo $cart_product['qty']; ?> ×</span>
+                                <span class="product-price">₹<?php echo $cart_product['product_price'] ?></span>
                             </div>
                         </div>
                     </div>
                     <div class="cart-edit">
                         <div class="quantity-edit">
                             <button class="button"><i class="fal fa-minus minus"></i></button>
-                            <input type="text" class="input" value="3" />
+                            <input data-cart-update-inp="<?php echo $cart_product['product']; ?>" type="text" class="input" value="<?php echo $cart_product['qty'] ?>" />
                             <button class="button plus">+<i class="fal fa-plus plus"></i></button>
                         </div>
                         <div class="item-wrapper d-flex mr--5 align-items-center">
-                            <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
-                            <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                            <button data-cart-remove-btn="<?php echo $cart_product['product']; ?>" class="delete-cart" style="color:red">Remove</button>
                         </div>
                     </div>
                 </div>
-                <div class="product-item">
-                    <div class="product-detail">
-                        <div class="product-thumb"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/slider/image2.jpg" alt="product-thumb"></div>
-                        <div class="item-wrapper">
-                            <span class="product-name">Narrow Trouser</span>
-                            <div class="item-wrapper">
-                                <span class="product-variation"><span class="color">Green /</span>
-                                    <span class="size">XL</span></span>
-                            </div>
-                            <div class="item-wrapper">
-                                <span class="product-qnty">2 ×</span>
-                                <span class="product-price">₹88.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-edit">
-                        <div class="quantity-edit">
-                            <button class="button"><i class="fal fa-minus minus"></i></button>
-                            <input type="text" class="input" value="2" />
-                            <button class="button plus">+<i class="fal fa-plus plus"></i></button>
-                        </div>
-                        <div class="item-wrapper d-flex mr--5 align-items-center">
-                            <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
-                            <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item last-child">
-                    <div class="product-detail">
-                        <div class="product-thumb"><img src="<?php echo base_url(); ?>assets/commerce/assets/images/slider/image5.jpg" alt="product-thumb"></div>
-                        <div class="item-wrapper">
-                            <span class="product-name">Bellyless Hoodie</span>
-                            <div class="item-wrapper">
-                                <span class="product-variation"><span class="color">Green /</span>
-                                    <span class="size">XL</span></span>
-                            </div>
-                            <div class="item-wrapper">
-                                <span class="product-qnty">1 ×</span>
-                                <span class="product-price">₹289.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-edit">
-                        <div class="quantity-edit">
-                            <button class="button"><i class="fal fa-minus minus"></i></button>
-                            <input type="text" class="input" value="2" />
-                            <button class="button plus">+<i class="fal fa-plus plus"></i></button>
-                        </div>
-                        <div class="item-wrapper d-flex mr--5 align-items-center">
-                            <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
-                            <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
-                        </div>
-                    </div>
-                </div>
+
+            <?php } ?>
+
             </div>
             <div class="cart-bottom-area">
                 <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">₹199.00</span> MORE
                     FOR FREE SHIPPING</span>
-                <span class="total-price">TOTAL: <span class="price">₹556</span></span>
-                <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
-                <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>
+                <span class="total-price">TOTAL: <span class="price">₹<?php echo $total_cart_value; ?></span></span>
+                <a href="javascript:void(0)" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
             </div>
         </div>
 
@@ -287,7 +254,7 @@
                             </div>
                         </div>
                         <div class="product-bottom-action">
-                            <button  class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
+                            <button data-add-cart-btn="<?php echo $product['id']; ?>"  class="addto-cart"><i class="fal fa-shopping-bag mr--5"></i> Add To
                                 Cart</butotn>
                         </div>
                     </div>
@@ -457,19 +424,24 @@
     <div class="rts-newsletter-popup">
         <div class="newsletter-close-btn"><i class="fal fa-times"></i></div>
         <div class="newsletter-inner">
-            <h3 class="newsletter-heading">Get Weekly Newsletter</h3>
-            <p>Priyoshop has brought to you the Hijab 3 Pieces Combo Pack
-                PS23. It is a completely modern design</p>
-            <form>
+            <h3 class="newsletter-heading">Creat Account</h3>
+            <p>Connect with us and get discount on your daily shopings.</p>
+            <form id="signup-form">
                 <div class="input-area">
-                    <div class="input-div"><input type="text" placeholder="Your name">
+                    <div class="input-div"><input id="name-inp" type="text" placeholder="Your name" required>
                         <div class="input-icon"><i class="far fa-user"></i></div>
                     </div>
-                    <div class="input-div"><input type="email" placeholder="Email address" required>
+                    <div class="input-div"><input  id="email-inp" type="email" placeholder="Email address" required>
+                        <div class="input-icon"><i class="far fa-envelope"></i></div>
+                    </div>
+                    <div class="input-div"><input  id="password-inp" type="password" placeholder="Password" required>
+                        <div class="input-icon"><i class="far fa-envelope"></i></div>
+                    </div>
+                    <div class="input-div"><input  id="confirm_password-inp" type="password" placeholder="Confirm Password" required>
                         <div class="input-icon"><i class="far fa-envelope"></i></div>
                     </div>
                 </div>
-                <button type="submit" class="subscribe-btn">Subscribe Now <i
+                <button type="submit" id="signup-btn" class="subscribe-btn">Sign Up <i
                         class="fal fa-long-arrow-right ml--5"></i></button>
             </form>
         </div>
@@ -482,8 +454,231 @@
             class="fas fa-circle-notch"></i></div>
     <!--================= Scroll to Top End =================-->
 
+    <script>
+        $base_url=`<?php echo base_url(); ?>`;
+        $csrf_name = `<?php echo $this->security->get_csrf_token_name(); ?>`;
+        $csrf = `<?php echo $this->security->get_csrf_hash(); ?>`;
+    </script>
+
+    <script>
+        //for add to cart
+
+        document.querySelectorAll(`[data-add-cart-btn]`).forEach(element => {
+            element.addEventListener('click',(e)=>{
+                const btn = e.target;
+                const product = btn.getAttribute('data-add-cart-btn');
+                btn.disabled=true;
+
+                fetch(`${$base_url}cart/add/${product}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON in the response
+            })
+            .then(data => {
+                if(data['status']){
+                    toastr.success('cart Successfully');
+                    setTimeout(()=>{location.reload()},1000);
+                }else{
+                    if(data['errors']){
+                        Object.keys(data['errors']).forEach(element => {
+                            toastr.warning(data['errors'][element]);
+                        });
+                        btn.disabled=false;
+                    }else{
+                        throw new Error('frontend validation not work');
+                    }
+                }
+            })
+            .catch(error => {
+                // Handle errors
+                toastr.error("Something Went Wrong! Plz try sometime latter.");
+                setTimeout(()=>{location.reload()},1000);
+            });
+
+            });
+        });
+
+    </script>
+
+    <script>
+        //for remove to cart
+
+        document.querySelectorAll(`[data-cart-remove-btn]`).forEach(element => {
+            element.addEventListener('click',(e)=>{
+                const btn = e.target;
+                const product = btn.getAttribute('data-cart-remove-btn');
+                btn.disabled=true;
+
+                fetch(`${$base_url}cart/remove/${product}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON in the response
+            })
+            .then(data => {
+                if(data['status']){
+                    toastr.success('cart remove Successfully');
+                    setTimeout(()=>{location.reload()},1000);
+                }else{
+                    if(data['errors']){
+                        Object.keys(data['errors']).forEach(element => {
+                            toastr.warning(data['errors'][element]);
+                        });
+                        btn.disabled=false;
+                    }else{
+                        throw new Error('frontend validation not work');
+                    }
+                }
+            })
+            .catch(error => {
+                // Handle errors
+                toastr.error("Something Went Wrong! Plz try sometime latter.");
+                setTimeout(()=>{location.reload()},1000);
+            });
+
+            });
+        });
+
+    </script>
+
+    <script>
+        //for udpate cart
+
+        document.querySelectorAll(`[data-cart-update-inp]`).forEach(element => {
+          
+            element.addEventListener('change',(e)=>{
+                const inp = e.target;
+                const product = inp.getAttribute('data-cart-update-inp');
+                const qty = inp.value;
+
+                fetch(`${$base_url}cart/update/${product}/${qty}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON in the response
+            })
+            .then(data => {
+                if(data['status']){
+                    inp.defaultValue = qty;
+                    toastr.success('cart update Successfully');
+                }else{
+                    inp.value = inp.defaultValue;
+                    if(data['errors']){
+                        Object.keys(data['errors']).forEach(element => {
+                            toastr.warning(data['errors'][element]);
+                        });
+                    }else{
+                        throw new Error('frontend validation not work');
+                    }
+                }
+            })
+            .catch(error => {
+                // Handle errors
+                toastr.error("Something Went Wrong! Plz try sometime latter.");
+                // setTimeout(()=>{location.reload()},1000);
+            });
+
+            });
+        });
+
+    </script>
+
+<?php if(!$auth_user){ ?>
+
+    <script>
+        //for signup
+
+        document.getElementById('signup-form').addEventListener('submit',(e)=>{
+        e.preventDefault();
+
+        let formData = new FormData();
+        formData.append("name", document.getElementById("name-inp").value);
+        formData.append("email", document.getElementById("email-inp").value);
+        formData.append("password", document.getElementById("password-inp").value);
+        formData.append("confirm_password", document.getElementById("confirm_password-inp").value);
+        formData.append($csrf_name,$csrf);
+
+        // Options for the fetch request
+        const options = {
+        method: 'POST',
+        body: formData, // Convert the data to JSON format
+
+        };
+
+        
+        document.getElementById('signup-btn').disabled=true;
+        // Make the fetch request
+        fetch(`${$base_url}signup`, options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the JSON in the response
+        })
+        .then(data => {
+            if(data['status']){
+                toastr.success(`Signup Successfully`);
+                setTimeout(()=>{location.reload()},1000);
+            }else{
+                if(data['errors']){
+                    Object.keys(data['errors']).forEach(element => {
+                        toastr.warning(data['errors'][element]);
+                    });
+                    document.getElementById('signup-btn').disabled=false;
+                }else{
+                    throw new Error('frontend validation not work');
+                }
+            }
+        })
+        .catch(error => {
+            // Handle errors
+            toastr.error("Something Went Wrong! Plz try sometime latter.");
+            // setTimeout(()=>{location.reload()},1000);
+        });
+
+
+
+        });
+
+    </script>
+
+<?php } ?>
+
+<script>
+    // for toaster
+    
+    window.addEventListener("load", function () {
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    });
+</script>
+
     <!--================= Jquery latest version =================-->
     <script src="<?php echo base_url(); ?>assets/commerce/assets/js/vendors/jquery-3.6.0.min.js"></script>
+
+    
+        <!-- toastre js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
     <!--================= Bootstrap latest version =================-->
     <script src="<?php echo base_url(); ?>assets/commerce/assets/js/vendors/bootstrap.min.js"></script>
     <!--================= Wow.js =================-->

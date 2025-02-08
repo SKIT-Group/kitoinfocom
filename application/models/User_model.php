@@ -17,4 +17,11 @@ class User_model extends CI_Model {
         return $this->db->where('email',$email)->get($this->table)->row_array();
     }
 
+    public function add_customer(array $user){
+        $user['pswd'] = password_hash($user['pswd'],PASSWORD_DEFAULT);
+        $user['type']='customer';
+        $this->db->insert($this->table,$user);
+        return $this->db->insert_id();
+    }
+
 }
