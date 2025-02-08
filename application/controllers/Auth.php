@@ -7,6 +7,7 @@ class Auth extends CI_Controller {
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('cart_model');
+        $this->load->model('product_model');
     }
 
 	public function index()
@@ -117,7 +118,9 @@ class Auth extends CI_Controller {
         $cart = $this->session->userdata('cart') ?? [];
 
         foreach ($cart as $key => $value) {
+            $tmp_product = $this->product_model->product($value['product']);
             $cart[$key]['user']=$user;
+            $cart[$key]['qty']=$value['qty']>$tmp_product['stock']?$tmp_product['stock']:$value['qty'];
         }
 
         if(sizeof($cart)>0 && !$this->cart_model->insert_batch($cart)){

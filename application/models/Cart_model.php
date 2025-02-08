@@ -40,4 +40,17 @@ class Cart_model extends CI_Model {
         return $this->db->affected_rows();
     }
 
+    public function checkout_product(int $user) {
+        $this->db->select('c.id, c.user, c.product, 
+            (CASE WHEN c.qty > p.stock THEN p.stock ELSE c.qty END) as qty, 
+            p.name as product_name, p.price as product_price');
+        $this->db->from('carts as c');
+        $this->db->join('products as p', 'c.product = p.id AND p.stock > 0', 'inner');
+        $this->db->where('c.user', $user);
+        $this->db->where('c.qty>',0);
+        
+        return $this->db->get()->result_array();
+    }
+    
+
 }
