@@ -73,7 +73,7 @@
                                     <span class="size">XL</span></span>
                             </div> -->
                             <div class="item-wrapper">
-                                <span class="product-qnty"><?php echo $qty; ?> ×</span>
+                                <span data-cart-product-qty="<?php echo $cart_product['product']; ?>" class="product-qnty"><?php echo $qty; ?> ×</span>
                                 <span class="product-price">$<?php echo $cart_product['product_price'] ?></span>
                             </div>
                         </div>
@@ -86,13 +86,13 @@
                         <?php }elseif($cart_product['qty']<=$cart_product['product_stock']){ ?>
                             <div class="quantity-edit">
                                 <button class="button"><i class="fal fa-minus minus"></i></button>
-                                <input data-cart-update-inp="<?php echo $cart_product['product']; ?>" type="text" class="input" value="<?php echo $qty; ?>" />
+                                <input data-cart-update-inp="<?php echo $cart_product['product']; ?>" type="text" data-price="<?php echo $cart_product['product_price']; ?>" class="input" value="<?php echo $qty; ?>" />
                                 <button class="button plus">+<i class="fal fa-plus plus"></i></button>
                             </div>
                             <?php }else{ ?>
                                 <div class="quantity-edit">
                                     <button class="button"><i class="fal fa-minus minus"></i></button>
-                                    <input data-cart-update-inp="<?php echo $cart_product['product']; ?>" type="text" class="input" value="<?php echo $qty; ?>" />
+                                    <input data-cart-update-inp="<?php echo $cart_product['product']; ?>" data-price="<?php echo $cart_product['product_price']; ?>" type="text" class="input" value="<?php echo $qty; ?>" />
                                     <button class="button plus">+<i class="fal fa-plus plus"></i></button>
                                 </div>
                         <?php } ?>
@@ -108,7 +108,7 @@
             <div class="cart-bottom-area">
                 <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
                     FOR FREE SHIPPING</span>
-                <span class="total-price">TOTAL: <span class="price">$<?php echo $total_cart_value; ?></span></span>
+                <span class="total-price">TOTAL: <span id="total-amount-ele" class="price">$<?php echo $total_cart_value; ?></span></span>
                 <button id="checkout-btn" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</button>
             </div>
         </div>
@@ -349,6 +349,18 @@
 
     <script>
         //for udpate cart
+        const update_total_amount_ui = ()=>{
+            let total_amount=0;
+            document.querySelectorAll(`[data-cart-update-inp]`).forEach(inp => {
+                const product = inp.getAttribute('data-cart-update-inp');
+                const price = inp.getAttribute('data-price');
+                const qty=inp.value;
+
+                document.querySelector(`[data-cart-product-qty='${product}']`).innerHTML = `${qty} ×`;
+                total_amount+=qty*price;
+            });  
+            document.getElementById('total-amount-ele').innerHTML="$"+total_amount;  
+        }
 
         document.querySelectorAll(`[data-cart-update-inp]`).forEach(element => {
           
@@ -367,6 +379,7 @@
             .then(data => {
                 if(data['status']){
                     inp.defaultValue = qty;
+                    update_total_amount_ui();
                     toastr.success('cart update Successfully');
                 }else{
                     inp.value = inp.defaultValue;
